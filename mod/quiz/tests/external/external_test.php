@@ -341,6 +341,7 @@ class external_test extends externallib_advanced_testcase {
         $this->assertEquals($expectedquizzes, $result['quizzes']);
 
         // Now, prevent access.
+        get_fast_modinfo($course2->id, $this->student->id, true);
         $enrol->enrol_user($instance2, $this->student->id);
 
         self::setUser($this->student);
